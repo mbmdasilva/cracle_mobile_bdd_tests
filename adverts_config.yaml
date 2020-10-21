@@ -1,0 +1,128 @@
+default: &default
+  network_id:
+    nw: '146140'
+    prof: '146140:crackle_ott_test'
+  # Video for pod position and ad order tests
+  content_pod_positioning:
+    name: 'The Throwaways'
+    short_name: 'the-throwaways'
+    video_id: 2494494
+    midroll_1_ts:
+    ads:
+      preroll_1: 
+        name: 'Resident Evil Biohazard'
+        adid: 15828328
+      midroll_1: 
+        name: 'Draft Kings'
+        adid: 14888316
+      midroll_2: 
+        name: 'Acer'
+        adid: 14888318
+      midroll_3: 
+        name: 'Navy'
+        adid: 25148257
+  # Video for Comscore pixel tracking
+  content_comscore_pixel:
+    name: 'The Throwaways'
+    short_name: 'the-throwaways'
+    video_id: 2494494
+    request:
+      url: 'scorecardresearch.com/p'
+      method: 'GET'
+    tags:
+      - 'c1'
+      - 'c2'
+      - 'c10'
+      - 'c3'
+      - 'c4'
+      - 'c5'
+      - 'c6'
+      - 'c11'
+      - 'c12'
+      - 'c13'
+      - 'c16'
+      - 'cj'
+      - 'ax_fwd'
+      - 'rn'
+      - 'ns_st_ge'
+      - 'ns_st_pr'
+      - 'ax_ty'
+      - 'ns_ap_pn'
+      - 'ax_bid'
+  # Video used by frequency capping tests
+  frequency_capping_per_stream:
+    advert_name: 'Autotrader Dukes of Hazzard'
+    advert_adids: 
+      - 14888342
+      - 14888343
+  # Video with empty VASTs in the first slot of each ad block
+  content_empty_vasts:
+    name: 'Spectacular Spider-Man'
+    short_name: 'spectacular-spider-man'
+    video_id: 2487036
+  # Video with ad blocks but empty VASTs in all slots
+  content_all_empty_vasts:
+    name: 'Marvel Anime: Ironman'
+    short_name: 'marvel-anime-ironman'
+    video_id: 2487177 # S1 E1
+  # Video with NO ad slots and therefore no adverts
+  content_no_slots_no_ads:
+    name: 'Dead Rising: Endgame'
+    short_name: dead-rising-endgame
+    video_id: 2498761
+  # Video WITH ad slots but NO ads within the slots
+  content_slots_no_ads:
+    name: 'Marvel Anime: Ironman'
+    short_name: 'marvel-anime-ironman'
+    video_id: 2487176 # S1 E2
+  # Video with high bitrate adverts
+  content_high_bitrate:
+    name: 'Sequestered'
+    short_name: 'sequestered'
+    video_id: 2493182 # S1 E1
+  # Video to be used for soak tests
+  content_for_soak:
+    name: 'The Oath'
+    video_id: 2505071  # Episode 1
+  # Video with AdButler vast tags
+  content_adbutler_vasts:
+    name: 'Snatch'
+    short_name: 'snatch'
+    video_id: 2502075
+    urls:
+      - 'https://servedbyadbutler.com/vast.spark?setID=4710&ID=170016&pid=41806'
+      - 'https://servedbyadbutler.com/vast.spark?setID=4538&ID=170016&pid=41806'
+  # Video with AdButler vast tags with unsafe characters
+  content_adbutler_unsafe_vasts:
+    name: 'Chosen'
+    short_name: 'chosen'
+    video_id: 2497864
+    urls:
+      - 'http://servedbyadbutler.com/vast.spark?setID=4884&ID=170016&pid=41806'
+      - 'https://servedbyadbutler.com/vast.spark?setID=4538&ID=170016&pid=41806&rand'
+  # Adverts per geo-ip region
+  country_geo_ip:
+    ads:
+      - 14888346  # Mikes Harder Lemonade
+      - 14888346  # BC Gov
+      - 21580394  # Passengers Trailer
+      - 21580392  # Resident Evil Trailer
+  state_geo_ip:
+    name: 'Extraction'
+    short_name: 'extraction'
+    video_id: 2490482
+    ads:
+      - 22061673  # Groupon
+  region_geo_ip:
+    name: 'The Throwaways'
+    short_name: 'the-throwaways'
+    video_id: 2494494
+    ads:
+      - 16310163  # Bacardi
+production:
+  <<: *default
+  network_id:
+    nw: '151933'
+    prof: '151933:crackle_prime_ctv_live'
+staging:
+  <<: *default

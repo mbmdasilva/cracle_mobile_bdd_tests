@@ -1,0 +1,34 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+
+[packages]
+appium-python-client = "*"
+behave-testrail-reporter = "==0.4.0"
+browsermob-proxy = {editable = true, git = "git://github.com/cmck/browsermob-proxy-py.git", ref = "7f193d184635bbeb4e7d6e9519ba51f8399a9097"}
+behave = "*"
+"beautifulsoup4" = "*"
+crackle-api-helpers = ">=1.14"
+"oslo.concurrency" = "*"
+pylint-runner = "==0.5.3"
+pylint = "==1.9.2"
+pyshould = "*"
+pyyaml = "*"
+requests = "*"
+selenium = "*"
+webdriver-manager = "*"
+webium = "*"
+whichcraft = "*"
+xmljson = "*"
+pytesseract = "*"
+opencv-python = "*"
+pillow = "*"
+pychromecast = "*"
+"m3u8" = "*"
+behave-parallel = {editable = true, git = "git://github.com/xrg/behave-parallel.git", ref = "6a291fba42fdbc05be815fe13316e189942393a2"}
+python-dateutil = "*"
+tabulate = {git = "git://github.com/cmck/python-tabulate.git", editable = true}
+boto3 = "*"

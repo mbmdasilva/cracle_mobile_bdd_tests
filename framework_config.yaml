@@ -1,0 +1,25 @@
+default: &default
+  waits:
+    ios: &default_waits
+      default: 2
+      quick: 3
+      normal: 8
+      slow: 30
+      very_slow: 45
+      appium: 300
+  mail:
+    provider: 'Gmail'
+    imap: 'imap.gmail.com'
+    email: 'cracklebddautomation@gmail.com'
+  stb_tester:
+    api:
+      host: 'https://crackle.stb-tester.com'
+  wifi:
+    avod:
+      ssid: 'Linksys03779'
+    svod:
+      ssid: 'Linksys01634'
+staging:
+  <<: *default
+production:
+  <<: *default

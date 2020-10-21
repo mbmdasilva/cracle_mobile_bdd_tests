@@ -1,0 +1,82 @@
+default: &default
+  app_version:
+    ios: '6.1.4'
+  crackle:
+    desktop:
+      host: 'staging-avod-web.crackle.com'
+  api:
+    avod: &api_avod_default
+      iphone:
+        host: 'https://staging-v1-api-us.crackle.com'
+        partner_id: '22'
+        secret: 'KRYDXUKMPKTONARP'
+        geo_code: 'US'
+      ipad:
+        host: 'https://staging-v1-api-us.crackle.com'
+        partner_id: '23'
+        secret: 'SKTXBQKAFJHDCECS'
+        geo_code: 'US'
+  analytics: &default_analytics
+    freewheel:
+      request:
+        url: '2517d.v.fwmrm.net/ad/g'
+        method: 'GET'
+        parameters:
+          - nw: '151933'
+          - prof: '151933'
+    adobe:
+      request:
+        url: 'crackle.d2.sc.omtrdc.net'
+        method: 'POST'
+    heartbeat:
+      request:
+        url: 'crackle.hb.omtrdc.net'
+        method: 'GET'
+        parameters:
+          - 's:sc:rsid': 'crackleuseli2015prod'
+    crackleapi:
+      request:
+        url: '-api-us.crackle.com'
+        method: 'GET'
+      response:
+        values:
+          - messageCode: '0'
+    omniture:
+      request:
+        url: 'omtrdc.net/b/ss/crackleuseli2015prod'
+        method: 'POST'
+  adserver:
+    uplynk:
+      request: 
+        method: 'GET'
+        url: 'api/v3/preplay/external/'
+    dash:
+      request:
+        method: 'POST'
+        url: '/ad/p'
+  testrail: &default_testrail
+    domain: crackle.testrail.io
+    base_url: 'https://crackle.testrail.io'
+    username: 'autotestcrackle@gmail.com'
+    projects_name: 'Crackle - iOS'
+    project_id: 3
+    suite_id: 781
+    test_run: 1814
+  jira:
+    base_url: 'https://crackleflow.atlassian.net/browse/'
+staging:
+  <<: *default
+production:
+  <<: *default
+  api:
+    avod:
+      iphone:
+        host: 'https://ios-api-us.crackle.com'
+        partner_id: '22'
+        secret: 'KRYDXUKMPKTONARP'
+        geo_code: 'US'
+      ipad:
+        host: 'https://ios-api-us.crackle.com'
+        partner_id: '23'
+        secret: 'SKTXBQKAFJHDCECS'
+        geo_code: 'US'
